@@ -1,6 +1,6 @@
-defmodule Geo.GreatCircle do
+defmodule GeoUtils.GreatCircle do
 
-  alias Geo.Utils
+  alias GeoUtils.Convert
 
   @earth_radius 6371.009
 
@@ -8,9 +8,9 @@ defmodule Geo.GreatCircle do
     # Calculate the Great Circle (spherical geometry) destination
     # given start point [lon, lat], course bearing
     # and distance travelled in Kilometres
-    lon_r = Utils.degrees_to_radians(lon)
-    lat_r = Utils.degrees_to_radians(lat)
-    bearing_r = Utils.degrees_to_radians(bearing)
+    lon_r = Convert.degrees_to_radians(lon)
+    lat_r = Convert.degrees_to_radians(lat)
+    bearing_r = Convert.degrees_to_radians(bearing)
 
     d_div_r = distance / @earth_radius # Earth radius in Km
 
@@ -21,16 +21,16 @@ defmodule Geo.GreatCircle do
       :math.sin(bearing_r)*:math.sin(d_div_r)*:math.cos(lat_r),
       :math.cos(d_div_r) - :math.sin(lat_r)*:math.sin(lat2_r)
     )
-    [Utils.radians_to_degrees(lon2_r), Utils.radians_to_degrees(lat2_r)]
+    [Convert.radians_to_degrees(lon2_r), Convert.radians_to_degrees(lat2_r)]
   end
 
   def distance([lon1, lat1], [lon2, lat2]) do
     # Calculate Great Circle (spherical geometry) distance
     # in Km between two points
-    lat1_r = Utils.degrees_to_radians(lat1)
-    lon1_r = Utils.degrees_to_radians(lon1)
-    lat2_r = Utils.degrees_to_radians(lat2)
-    lon2_r = Utils.degrees_to_radians(lon2)
+    lat1_r = Convert.degrees_to_radians(lat1)
+    lon1_r = Convert.degrees_to_radians(lon1)
+    lat2_r = Convert.degrees_to_radians(lat2)
+    lon2_r = Convert.degrees_to_radians(lon2)
 
     sin_lat1 = :math.sin(lat1_r)
     cos_lat1 = :math.cos(lat1_r)

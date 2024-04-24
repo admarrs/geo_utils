@@ -1,4 +1,4 @@
-defmodule Geo.Geodesic do
+defmodule GeoUtils.Geodesic do
 
   # @a 6378.137 # WGS84 Ellipsoid major axis (km)
   # @f 1/298.257223563 # WGS84 Ellipsoid flattening

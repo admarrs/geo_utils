@@ -3,7 +3,7 @@ defmodule Geo.MixProject do
 
   def project do
     [
-      app: :geo,
+      app: :geo_utils,
       version: "0.1.0",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),

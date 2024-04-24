@@ -1,4 +1,4 @@
-defmodule Geo.Utils do
+defmodule GeoUtils.Convert do
 
   def nm_to_km(nm), do: nm * 1.852
 
