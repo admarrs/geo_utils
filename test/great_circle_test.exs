@@ -1,7 +1,7 @@
-defmodule Geo.GreatCircleTest do
+defmodule GeoUtils.GreatCircleTest do
   use ExUnit.Case
 
-  alias Geo.GreatCircle
+  alias GeoUtils.GreatCircle
 
   @earth_radius 6371.009
   @earth_circumference 2 * :math.pi * @earth_radius
