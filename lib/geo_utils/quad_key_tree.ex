@@ -86,6 +86,10 @@ defmodule GeoUtils.QuadKeyTree do
     end
   end
 
+  defp query_group(tree, "", group_zoom) do
+    []
+  end
+
   defp query_group(tree, quadkey, group_zoom) do
     # Query the tree to find children that fall within the tile
     # defined by the quadkey. If the level within the tree is below
